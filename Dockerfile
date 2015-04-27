@@ -2,10 +2,8 @@ FROM debian:jessie
 MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gmail.com>
 
 # Install Requirment
-# - Dotdeb key 89DF5277
 # - Postgresql key ACCC4CF8
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 89DF5277 \
- && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCC4CF8 \
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCC4CF8 \
  && echo "deb http://mirror.leaseweb.net/debian/ stable main\ndeb http://mirror.leaseweb.net/debian/ jessie-updates main\ndeb http://security.debian.org/ jessie/updates main" > /etc/apt/sources.list \
  && echo "deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main" >> /etc/apt/sources.list.d/postgresql.list \
  && apt-get update \
